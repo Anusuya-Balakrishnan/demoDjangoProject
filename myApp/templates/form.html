@@ -1,0 +1,23 @@
+{% extends 'home.html' %}
+
+{% block 'main' %}
+{% if message == "enter value"  %}
+<script>
+    alert("Enter value");
+</script>
+
+{% endif %}
+<form method="post">
+    {% csrf_token %}
+    <label for="">Name:</label> <br />
+    <input type="text" name="username"><br />
+    <label for="">Rollno:</label> <br />
+    <input type="text" name="rollno"><br />
+    <label for="">Age:</label><br />
+    <input type="number" name="age"><br />
+    <label for="">mark:</label><br />
+    <input type="number" name="mark"><br />
+    <input type="submit">
+</form>
+
+{% endblock %}

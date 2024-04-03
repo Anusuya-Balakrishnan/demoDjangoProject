@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+    </head>
+
+    <body>
+        <h1 class="heading">Hello {{name}}</h1>
+        <p>Lorem ipsum dolor {{name}} sit amet consectetur adipisicing elit. Fugiat, nisi cupiditate facere minus odit
+            omnis ut
+            suscipit eligendi unde, repellendus illum, animi consectetur tempore consequuntur officiis? Amet earum
+            laborum voluptas?</p>
+        <a href="{% url 'aboutPage' %}">About page</a>
+        <a href="{% url 'formPage' %}">Form page</a>
+        <a href="{% url 'logoutOption'%}">Logout</a>
+        {% block 'main' %}
+        <h1>Hello world</h1>
+        <table border="1" style="border-collapse: collapse;">
+
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Mark</th>
+                <th>Rollno</th>
+            </tr>
+            {% for eachData in data %}
+            <tr>
+                <td>{{ eachData.name }}</td>
+                <td>{{eachData.age}}</td>
+                <td>{{eachData.mark}}</td>
+                <td>{{eachData.rollno}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        {% endblock %}
+    </body>
+
+</html>
